@@ -1,0 +1,396 @@
+/* GENERAL */
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-image: url("../img/bg.jpg");
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+main {
+  flex: 1;
+}
+
+/*HEADER ----------- */
+
+header {
+  background: #ff5252;
+  text-align: center;
+  padding: 18px;
+  border-bottom: 3px solid #e53935;
+  color: white;
+  letter-spacing: 1px;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.6rem;
+}
+
+/* OVERVIEW ------------- */
+
+.overview .avail-budget {
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+}
+
+.overview .avail-budget h2,
+.overview .avail-budget h1 {
+  margin: 15px 0;
+}
+
+.overview h2 {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.overview h1 {
+  font-size: 2.5rem;
+}
+
+.total-inc-exp .inc,
+.total-inc-exp .exp {
+  background: rgba(0, 0, 0, 0.3);
+  width: 70%;
+  margin: 0 auto;
+  color: white;
+  font-size: 1.2rem;
+  padding: 15px;
+  margin-bottom: 10px;
+}
+
+.total-inc-exp p {
+  float: right;
+}
+
+/*MAIN CONTAINER ---------- */
+
+.container {
+  background: rgba(0, 0, 0, 0.3);
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 25px;
+  padding: 15px;
+}
+
+/* TRANSACTION ADDER --------- */
+
+.trans-adder {
+  display: flex;
+  justify-content: center;
+  padding: 15px 0;
+}
+
+.trans-adder select,
+.trans-adder input,
+.trans-adder button {
+  padding: 10px 10px;
+  font-size: 1rem;
+  outline: none;
+  border: none;
+  background: rgba(0, 0, 0, 0.3);
+  color: white;
+  margin-right: 10px;
+  border-radius: 3px;
+  font-family: "Raleway", sans-serif;
+}
+
+.trans-adder select,
+.trans-adder input {
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  transition: border 0.3s;
+}
+
+.trans-adder input::placeholder {
+  color: white;
+  opacity: 0.5;
+}
+
+.trans-adder .trans-desc {
+  width: 150px;
+}
+
+.trans-adder .trans-value {
+  width: 70px;
+}
+
+.trans-adder select:focus,
+.trans-adder input:focus {
+  border: 1px solid white;
+}
+
+#trans-submit,
+#trans-update {
+  border: none;
+  background: #ff5252;
+  border-bottom: #e53935 solid 2px;
+  cursor: pointer;
+}
+
+#trans-submit:hover,
+#trans-update:hover {
+  background: #e53935;
+  transition: all 0.4s;
+}
+
+#trans-deleteAll {
+  border: none;
+  background: #2196f3;
+  border-bottom: #1976d2 solid 2px;
+  transition: all 0.4s;
+  cursor: pointer;
+}
+
+#trans-deleteAll:hover {
+  background: #1976d2;
+}
+
+#trans-cancel {
+  border: none;
+  background: #333;
+  border-bottom: 2px solid #111;
+  cursor: pointer;
+}
+
+#trans-cancel:hover {
+  background: #111;
+  transition: all 0.4s;
+}
+
+#trans-submit:focus,
+#trans-update:focus,
+#trans-cancel:focus,
+#trans-deleteAll:focus {
+  border: none;
+}
+
+#trans-update,
+#trans-cancel {
+  display: none;
+}
+
+/* TRANSACTIONS LIST --------- */
+
+.transactions {
+  padding: 20px 15px;
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.transactions h2 {
+  border-bottom: 1px solid #fff;
+  padding-bottom: 10px;
+}
+
+.transactions .incomes,
+.transactions .expenses {
+  width: 96%;
+  display: inline-block;
+}
+
+.transactions .expenses {
+  float: right;
+}
+
+.item {
+  padding: 10px;
+  height: 19px;
+  border-bottom: 1px solid #fff;
+}
+
+.item .left {
+  float: left;
+}
+
+.item .right {
+  float: right;
+}
+
+.item .right .item-value {
+  float: left;
+  transition: transform 0.3s;
+}
+
+.item .right .options {
+  display: none;
+  float: right;
+}
+
+.item .right .options a {
+  color: white;
+  text-decoration: none;
+  padding: 5px;
+  background: rgba(0, 0, 0, 0.3);
+  font-size: 0.8rem;
+  border-radius: 2px;
+  transition: all 0.2s ease-in;
+}
+
+.item .right .options a:hover {
+  background: white;
+  color: black;
+}
+
+.item:hover .options {
+  display: block;
+}
+
+.item:hover .item-value {
+  transform: translateX(-10px);
+}
+
+.item:hover {
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+footer {
+  margin-top: 25px;
+  background: rgba(0, 0, 0, 0.3);
+  text-align: center;
+  padding: 10px;
+  color: white;
+  font-size: 15px;
+}
+
+#notification {
+  visibility: hidden;
+  min-width: 200px;
+  background-color: rgba(51, 51, 51, 0.8);
+  color: white;
+  text-align: center;
+  border-radius: 10px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  right: 5%;
+  top: 15%;
+  height: 15px;
+}
+
+#notification.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {
+    top: 0;
+    opacity: 0;
+  }
+  to {
+    top: 15%;
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    top: 0;
+    opacity: 0;
+  }
+  to {
+    top: 15%;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeout {
+  from {
+    top: 15%;
+    opacity: 1;
+  }
+  to {
+    top: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    top: 15%;
+    opacity: 1;
+  }
+  to {
+    top: 0;
+    opacity: 0;
+  }
+}
+
+@media (max-width: 700px) {
+  header {
+    padding: 12px;
+  }
+  header nav a {
+    font-size: 1.4rem;
+  }
+  .overview .avail-budget h2,
+  .overview .avail-budget h1 {
+    margin: 10px 0;
+  }
+  .total-inc-exp .inc,
+  .total-inc-exp .exp {
+    font-size: 1rem;
+  }
+  .container {
+    margin-top: 20px;
+  }
+  .transactions {
+    grid-template-columns: 1fr;
+    grid-row-gap: 20px;
+  }
+
+  .trans-adder {
+    width: auto;
+    display: block;
+  }
+
+  .trans-adder input,
+  .trans-adder select {
+    margin-bottom: 10px;
+  }
+
+  .trans-adder .trans-desc {
+    width: 30%;
+  }
+
+  .item .right .options {
+    display: block;
+    margin-left: 10px;
+  }
+  .item:hover .item-value {
+    transform: none;
+  }
+
+  .item:hover {
+    opacity: 1;
+    transition: none;
+  }
+}
+
+@media (max-width: 440px) {
+  .trans-adder .trans-desc {
+    width: 70%;
+  }
+}
+@media (max-width: 360px) {
+  .trans-adder .trans-desc {
+    width: 60%;
+  }
+}

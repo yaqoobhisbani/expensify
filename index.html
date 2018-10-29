@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Expensify</title>
+    <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <!--Header-->
+    <header>
+        <nav>
+            <a href="#" class="logo">Expensify</a>
+            <span> - The Cost Tracker</span>
+        </nav>
+    </header>
+
+    <!--Budget Overview-->
+    <section class="overview">
+        <!--Available Budget-->
+        <div class="avail-budget">
+            <h2>Available Budget</h2>
+            <h1>+ <span id="available-budget">0.00</span></h1>
+        </div>
+
+        <!--Total Income and Expense-->
+        <div class="total-inc-exp">
+            <div class="inc">
+                Income:
+                <p>+ <span id="total-inc">0.00</span></p>
+            </div>
+
+            <div class="exp">
+                Expense:
+                <p>- <span id="total-exp">0.00</span></p>
+            </div>
+        </div>
+    </section>
+
+    <!--Main Container, Transaction Adder and History-->
+    <main class="container">
+        <!--Transaction Adder-->
+        <div class="trans-adder">
+            <select class="trans-type">
+                <option value="income-list" selected>+</option>
+                <option value="expense-list">-</option>
+            </select>
+            <input type="text" class="trans-desc" placeholder="Add Description">
+            <input type="number" class="trans-value" placeholder="Value">
+            <input type="button" value="Add" id="trans-submit" />
+            <input type="button" value="Update" id="trans-update" />
+            <input type="button" value="Cancel" id="trans-cancel" />
+            <input type="button" value="Delete All" id="trans-deleteAll" />
+        </div>
+
+        <!--Transactions-->
+        <div class="transactions">
+            <div class="incomes">
+                <h2>Incomes</h2>
+                <div id="income-list">
+                </div>
+            </div>
+            <div class="expenses">
+                <h2>Expenses</h2>
+                <div id="expense-list">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer id="footer">
+        <p>Copyright &copy; 2018. Made By Muhammad Yaqoob</p>
+    </footer>
+
+    <!--Scripts at the end of page-->
+    <script src="js/app.js"></script>
+</body>
+
+</html>
