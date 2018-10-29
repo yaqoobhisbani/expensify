@@ -1,0 +1,15 @@
+{
+  "name": "expensify",
+  "version": "1.0.0",
+  "description": "The Cost Tracker Application",
+  "main": "index.html",
+  "scripts": {
+    "deploy": "gh-pages -d dist"
+  },
+  "author": "Muhammad Yaqoob",
+  "license": "MIT",
+  "homepage": "https://yaqoobhisbani.github.io/expensify",
+  "dependencies": {
+    "gh-pages": "^2.0.1"
+  }
+}
